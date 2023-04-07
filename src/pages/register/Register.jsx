@@ -26,7 +26,7 @@ export default function Register() {
         history.push("/login");
         <Link to={`/login`}></Link>;
       } catch (err) {
-        console.log(err);
+        console.log(`An Error Occured = `, err);
       }
     }
   };
