@@ -24,7 +24,8 @@ export default function Register() {
       };
       try {
         // await axios.post("/auth/register", user);
-        await axios.post(`${BASE_URL}/auth/register`, user);
+        // await axios.post(`${BASE_URL}/auth/register`, user);
+        await axios.post(`${BASE_URL}/api/auth/register`, user);
         history.push("/login");
         <Link to={`/login`}></Link>;
       } catch (err) {
