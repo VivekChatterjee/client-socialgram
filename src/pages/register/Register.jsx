@@ -10,7 +10,7 @@ export default function Register() {
   const password = useRef();
   const passwordAgain = useRef();
   const history = useHistory();
-  // const BASE_URL = `https://rest-api-socialgram.onrender.com`;
+  const BASE_URL = `https://rest-api-socialgram.onrender.com`;
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -23,7 +23,8 @@ export default function Register() {
         password: password.current.value,
       };
       try {
-        await axios.post("/auth/register", user);
+        // await axios.post("/auth/register", user);
+        await axios.post(`${BASE_URL}/auth/register`, user);
         history.push("/login");
         <Link to={`/login`}></Link>;
       } catch (err) {
