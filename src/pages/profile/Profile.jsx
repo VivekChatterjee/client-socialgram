@@ -8,7 +8,10 @@ import axios from "axios";
 import { useParams } from "react-router";
 
 export default function Profile() {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const PF =
+    process.env.NODE_ENV == "production"
+      ? process.env.REACT_APP_PUBLIC_FOLDER
+      : process.env.REACT_APP_LOCAL_FOLDER;
   const [user, setUser] = useState({});
   const username = useParams().username;
 
