@@ -11,7 +11,7 @@ export default function Register() {
   const passwordAgain = useRef();
   const history = useHistory();
   const BASE_URL =
-    process.env.NODE_ENV == "production"
+    process.env.NODE_ENV === "production"
       ? `https://rest-api-socialgram.onrender.com`
       : `http://localhost:8800`;
 
@@ -28,10 +28,13 @@ export default function Register() {
       try {
         // await axios.post("/auth/register", user);
         // await axios.post(`${BASE_URL}/auth/register`, user);
+        console.log(BASE_URL);
+        console.log("env file=", process.env.NODE_ENV);
         await axios.post(`${BASE_URL}/api/auth/register`, user);
         history.push("/login");
         <Link to={`/login`}></Link>;
       } catch (err) {
+        console.log("env file=", process.env.NODE_ENV);
         console.log(`An Error Occured = `, err);
       }
     }

@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 export default function Topbar() {
   const { user } = useContext(AuthContext);
   const PF =
-    process.env.NODE_ENV == "production"
+    process.env.NODE_ENV === "production"
       ? process.env.REACT_APP_PUBLIC_FOLDER
       : process.env.REACT_APP_LOCAL_FOLDER;
   return (

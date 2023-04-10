@@ -9,7 +9,7 @@ import { Add, Remove } from "@material-ui/icons";
 
 export default function Rightbar({ user }) {
   const PF =
-    process.env.NODE_ENV == "production"
+    process.env.NODE_ENV === "production"
       ? process.env.REACT_APP_PUBLIC_FOLDER
       : process.env.REACT_APP_LOCAL_FOLDER;
   const [friends, setFriends] = useState([]);

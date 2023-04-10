@@ -13,7 +13,7 @@ import axios from "axios";
 export default function Share() {
   const { user } = useContext(AuthContext);
   const PF =
-    process.env.NODE_ENV == "production"
+    process.env.NODE_ENV === "production"
       ? process.env.REACT_APP_PUBLIC_FOLDER
       : process.env.REACT_APP_LOCAL_FOLDER;
   const desc = useRef();
