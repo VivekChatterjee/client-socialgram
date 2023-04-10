@@ -10,10 +10,14 @@ export default function Register() {
   const password = useRef();
   const passwordAgain = useRef();
   const history = useHistory();
+  // const BASE_URL =
+  //   process.env.NODE_ENV === "production"
+  //     ? `https://rest-api-socialgram.onrender.com`
+  //     : `http://localhost:8800`;
   const BASE_URL =
-    process.env.NODE_ENV === "production"
+    process.env.NODE_ENV === "dev"
       ? `https://rest-api-socialgram.onrender.com`
-      : `http://localhost:8800`;
+      : ``;
 
   const handleClick = async (e) => {
     e.preventDefault();
